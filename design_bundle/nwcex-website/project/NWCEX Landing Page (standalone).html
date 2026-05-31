@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWCEX — North-West Care Exchange</title>
+  <meta name="ext-resource-dependency" content="assets/fig-salom.png" data-resource-id="salom" />
+  <meta name="ext-resource-dependency" content="assets/fig-effie.png" data-resource-id="effie" />
+  <meta name="ext-resource-dependency" content="assets/fig-nyasha.png" data-resource-id="nyasha" />
+  <meta name="ext-resource-dependency" content="assets/fig-andrew.png" data-resource-id="andrew" />
+  <meta name="ext-resource-dependency" content="assets/fig-tapiwa.png" data-resource-id="tapiwa" />
+  <meta name="ext-resource-dependency" content="assets/fig-muzie.png" data-resource-id="muzie" />
+  <meta name="ext-resource-dependency" content="assets/fig-bonita.png" data-resource-id="bonita" />
+  <meta name="ext-resource-dependency" content="assets/fig-card-bg.png" data-resource-id="cardbg" />
+  <template id="__bundler_thumbnail" data-bg-color="#121315">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#121315"/>
+      <rect x="360" y="300" width="480" height="200" rx="8" fill="none" stroke="#C18A2E" stroke-width="3"/>
+      <text x="600" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="120" font-weight="600" letter-spacing="6">
+        <tspan fill="#ffffff">NWC</tspan><tspan fill="#C18A2E">EX</tspan>
+      </text>
+    </svg>
+  </template>
+  <link rel="stylesheet" href="assets/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--ink-900); -webkit-font-smoothing: antialiased; }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    ::selection { background: var(--gold-500); color: var(--ink-900); }
+    #site-scroll::-webkit-scrollbar { width: 10px; }
+    #site-scroll::-webkit-scrollbar-track { background: var(--ink-900); }
+    #site-scroll::-webkit-scrollbar-thumb { background: var(--ink-600); border-radius: 6px; }
+    input:focus, textarea:focus { border-color: var(--gold-500) !important; }
+    button { font-family: inherit; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="primitives.jsx"></script>
+  <script type="text/babel" src="Header.jsx"></script>
+  <script type="text/babel" src="About.jsx"></script>
+  <script type="text/babel" src="Event.jsx"></script>
+  <script type="text/babel" src="Speakers.jsx"></script>
+  <script type="text/babel" src="Booking.jsx"></script>
+  <script type="text/babel" src="Contact.jsx"></script>
+  <script type="text/babel" src="TicketModal.jsx"></script>
+  <script type="text/babel" src="App.jsx"></script>
+</body>
+</html>

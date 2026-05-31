@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWCEX — North-West Care Exchange</title>
+  <link rel="stylesheet" href="assets/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--ink-900); -webkit-font-smoothing: antialiased; }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    ::selection { background: var(--gold-500); color: var(--ink-900); }
+    #site-scroll::-webkit-scrollbar { width: 10px; }
+    #site-scroll::-webkit-scrollbar-track { background: var(--ink-900); }
+    #site-scroll::-webkit-scrollbar-thumb { background: var(--ink-600); border-radius: 6px; }
+    input:focus, textarea:focus { border-color: var(--gold-500) !important; }
+    button { font-family: inherit; }
+
+    /* ---------- PRINT ---------- */
+    @page { size: 1240px 1754px; margin: 0; }
+    @media print {
+      html, body {
+        background: var(--ink-900) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        transition: none !important;
+        animation: none !important;
+      }
+      /* unclip the scroll container so the whole page flows */
+      #site-scroll {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      /* header should not stick/overlap in paged output */
+      #site-scroll > header {
+        position: static !important;
+        background: var(--ink-900) !important;
+        backdrop-filter: none !important;
+        border-bottom: 1px solid var(--line-dark) !important;
+      }
+      /* keep visual groups intact across page breaks */
+      section { break-inside: avoid-page; }
+      /* hide interactive-only chrome */
+      .om-tweaks-root, #om-tweaks-root { display: none !important; }
+    }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="primitives.jsx"></script>
+  <script type="text/babel" src="Header.jsx"></script>
+  <script type="text/babel" src="About.jsx"></script>
+  <script type="text/babel" src="Event.jsx"></script>
+  <script type="text/babel" src="Speakers.jsx"></script>
+  <script type="text/babel" src="Booking.jsx"></script>
+  <script type="text/babel" src="Contact.jsx"></script>
+  <script type="text/babel" src="TicketModal.jsx"></script>
+  <script type="text/babel" src="App.jsx"></script>
+  <script type="text/babel" data-presets="env,react">
+    // Auto-open the print dialog once the React app, fonts and icons are ready.
+    (function () {
+      function ready() {
+        return document.querySelector('#speakers') &&
+               document.querySelector('#tickets') &&
+               document.querySelector('#contact');
+      }
+      function waitForApp(tries) {
+        if (ready() || tries <= 0) { finish(); }
+        else { setTimeout(function () { waitForApp(tries - 1); }, 150); }
+      }
+      function finish() {
+        var fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+        fontsReady.then(function () {
+          if (window.lucide) window.lucide.createIcons();
+          setTimeout(function () { window.print(); }, 600);
+        });
+      }
+      window.addEventListener('load', function () { waitForApp(60); });
+    })();
+  </script>
+</body>
+</html>

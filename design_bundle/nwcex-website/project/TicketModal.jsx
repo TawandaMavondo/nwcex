@@ -2,10 +2,9 @@
 
 function TicketModal({ open, onClose }) {
   const tiers = [
-    ['Conference Only', '£95'],
-    ['Conference + Gala Dinner', '£165'],
-    ['Gala Dinner Only', '£75'],
-    ['All-Inclusive (+ Overnight Hotel)', '£245'],
+    ['Conference Only', '£224'],
+    ['Conference + Gala Dinner', '£300'],
+    ['Gala Dinner Only', '£146'],
   ];
   const [sel, setSel] = useState(1);
   const [done, setDone] = useState(false);
@@ -56,6 +55,9 @@ function TicketModal({ open, onClose }) {
               <input placeholder="Full name" style={inp} />
               <input placeholder="Work email" style={{ ...inp, marginTop: 10 }} />
               <input placeholder="Organisation" style={{ ...inp, marginTop: 10 }} />
+              <p style={{ margin: '14px 0 0', fontSize: 11, lineHeight: 1.55, color: 'var(--on-dark-3)' }}>
+                <strong style={{ color: 'var(--gold-400)', fontWeight: 700 }}>Early Bird Offer:</strong> Prices include a 25% discount for bookings on or before 30 June 2026, rising 25% from 1 July 2026.
+              </p>
               <Btn onClick={() => setDone(true)} style={{ width: '100%', marginTop: 18 }}>Confirm Booking — {tiers[sel][1]}</Btn>
             </>
           )}

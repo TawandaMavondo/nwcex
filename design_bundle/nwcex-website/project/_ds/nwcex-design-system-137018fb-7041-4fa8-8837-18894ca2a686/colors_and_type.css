@@ -1,0 +1,177 @@
+/* ============================================================
+   NWCEX — North-West Care Exchange
+   Colour & Type foundations
+   ------------------------------------------------------------
+   Premium · Corporate · Modern · Executive · Clean · Credible
+   Palette: Charcoal · White · Beige · Gold accents only
+   ============================================================ */
+
+/* --- Webfonts (Google Fonts substitutes — see README) ------
+   Cinzel            → Trajan-style engraved caps in the logo + display
+   Cormorant Garamond→ high-contrast editorial serif (names, quotes)
+   Montserrat        → clean grotesque for body, UI & letterspaced labels
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ---------- CHARCOAL / INK (primary dark) ---------- */
+  --ink-900: #111214;   /* deepest background, posters */
+  --ink-800: #16171A;   /* primary charcoal surface */
+  --ink-700: #1E1F22;   /* raised panel on dark */
+  --ink-600: #2A2620;   /* warm charcoal (poster name-plate) */
+  --ink-500: #3A352D;   /* warm charcoal, lighter */
+
+  /* ---------- GOLD (accent only) ---------- */
+  --gold-700: #8E5D10;  /* deep bronze shadow */
+  --gold-600: #A26B11;  /* antique gold (poster headline) */
+  --gold-500: #C18A2E;  /* primary gold — the brand accent */
+  --gold-400: #D2A24A;  /* hover / lit gold */
+  --gold-300: #E3C57E;  /* soft gold highlight */
+  --gold-100: #F2E6C9;  /* gold tint wash on light */
+
+  /* ---------- BEIGE / WARM NEUTRALS (light surfaces) ---------- */
+  --beige-50:  #FBF9F4; /* off-white page */
+  --beige-100: #F4EFE4; /* beige surface */
+  --beige-200: #ECE5D6; /* beige card */
+  --beige-300: #E0D5BD; /* deep beige / hairline on light */
+  --paper:     #FFFFFF; /* pure white */
+
+  /* ---------- TEXT ---------- */
+  --on-dark-1: #FFFFFF; /* primary text on charcoal */
+  --on-dark-2: #C9C6BE; /* secondary text on charcoal */
+  --on-dark-3: #8C887F; /* muted / captions on charcoal */
+  --on-light-1: #1A1A1A;/* primary text on light */
+  --on-light-2: #57534A;/* secondary text on light */
+  --on-light-3: #8A857A;/* muted / captions on light */
+
+  /* ---------- BORDERS / LINES ---------- */
+  --line-dark:  rgba(255,255,255,0.12); /* hairline on charcoal */
+  --line-gold:  rgba(193,138,46,0.55);  /* gold rule / frame */
+  --line-light: rgba(26,26,26,0.10);    /* hairline on light */
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  --font-serif:   'Cormorant Garamond', 'Georgia', serif;
+  --font-sans:    'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ---------- TYPE SCALE (desktop) ---------- */
+  --fs-display: 76px;  /* hero / poster headline */
+  --fs-h1: 52px;
+  --fs-h2: 38px;
+  --fs-h3: 27px;
+  --fs-h4: 21px;
+  --fs-body-lg: 19px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-caption: 12px;
+  --fs-overline: 12px;
+
+  /* ---------- SPACING (8pt base) ---------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --sp-9: 96px; --sp-10: 128px;
+
+  /* ---------- RADII (restrained / squared) ---------- */
+  --r-sm: 2px;   /* inputs, chips */
+  --r-md: 4px;   /* buttons, cards */
+  --r-lg: 8px;   /* large panels */
+  --r-pill: 999px;
+
+  /* ---------- ELEVATION ---------- */
+  --shadow-sm: 0 1px 2px rgba(17,18,20,0.06), 0 1px 1px rgba(17,18,20,0.04);
+  --shadow-md: 0 8px 24px rgba(17,18,20,0.10);
+  --shadow-lg: 0 24px 60px rgba(17,18,20,0.18);
+  --shadow-gold: 0 10px 30px rgba(162,107,17,0.28);
+
+  /* ---------- MOTION ---------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 240ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY
+   ============================================================ */
+
+.nwc-display,
+.nwc-h1, .nwc-h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.nwc-display { font-size: var(--fs-display); letter-spacing: 0.04em; }
+.nwc-h1 { font-size: var(--fs-h1); }
+.nwc-h2 { font-size: var(--fs-h2); }
+
+.nwc-h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.nwc-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+}
+
+.nwc-lede {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+}
+
+.nwc-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  text-wrap: pretty;
+}
+
+.nwc-small {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+
+/* Letterspaced caps — the signature label style (logo subline,
+   eyebrows, nav, buttons). Used everywhere for the corporate feel. */
+.nwc-overline {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-overline);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.nwc-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  line-height: 1;
+}
+
+/* Elegant serif italic — pull quotes, speaker descriptors */
+.nwc-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.nwc-gold { color: var(--gold-500); }

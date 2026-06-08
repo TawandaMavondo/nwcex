@@ -1,10 +1,22 @@
 /* global React, Eyebrow, Icon, Btn, GoldFrame, useState */
 
 const TIERS = [
-{ name: 'Conference Only', price: '£95', feats: ['Full-day conference access', 'Keynotes, panels & workshops', 'Networking breakfast & lunch', 'Programme & resources'], tag: null, dark: false },
-{ name: 'Conference + Gala', price: '£165', feats: ['Everything in Conference', 'Evening gala & dinner', 'Reserved networking table', 'Drinks reception'], tag: 'Most popular', dark: true },
-{ name: 'Gala Dinner Only', price: '£75', feats: ['Evening gala & dinner', 'Drinks reception', 'Evening networking', 'After-dinner address'], tag: null, dark: false },
-{ name: 'All-Inclusive', price: '£245', feats: ['Conference + gala dinner', 'Overnight hotel stay', 'Breakfast the next morning', 'Priority seating throughout'], tag: 'Best value', dark: false }];
+{ name: 'Conference Only', price: '£224', feats: ['Full-day conference access', 'Keynotes, panels & workshops', 'Networking breakfast & lunch', 'Programme & resources'], tag: null, dark: false },
+{ name: 'Conference + Gala Dinner', price: '£300', feats: ['Everything in Conference', 'Evening gala & dinner', 'Reserved networking table', 'Drinks reception'], tag: 'Most popular', dark: true },
+{ name: 'Gala Dinner Only', price: '£146', feats: ['Evening gala & dinner', 'Drinks reception', 'Evening networking', 'After-dinner address'], tag: null, dark: false }];
+
+const EARLY_BIRD = 'Early Bird Offer: Prices shown include a 25% Early Bird Discount for bookings made on or before 30 June 2026. Ticket prices will increase by 25% for bookings made from 1 July 2026 onwards.';
+
+function EarlyBirdNote({ light }) {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', maxWidth: 760, margin: '0 auto', padding: '16px 22px', borderRadius: 6, border: '1px solid var(--line-gold)', background: light ? 'rgba(193,138,46,.06)' : 'rgba(193,138,46,.08)' }}>
+      <Icon name="info" size={17} color={light ? 'var(--gold-600)' : 'var(--gold-400)'} style={{ marginTop: 2, flex: 'none' }} />
+      <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: light ? 'var(--on-light-2)' : 'var(--on-dark-2)' }}>
+        <strong style={{ color: light ? 'var(--gold-600)' : 'var(--gold-400)', fontWeight: 700 }}>Early Bird Offer:</strong> Prices shown include a 25% Early Bird Discount for bookings made on or before 30 June 2026. Ticket prices will increase by 25% for bookings made from 1 July 2026 onwards.
+      </p>
+    </div>);
+
+}
 
 
 // ---- Booking event tiers (beige) ----
@@ -12,14 +24,14 @@ function Booking({ onBook }) {
   return (
     <section id="tickets" style={{ background: 'var(--beige-100)', padding: '96px 40px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: 54 }}>
-          <Eyebrow style={{ color: 'var(--gold-600)', marginBottom: 16 }}>Book Your Ticket</Eyebrow>
+        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <Eyebrow style={{ color: 'var(--gold-600)', marginBottom: 16 }}>Book Your Ticket · Early Bird until 30 June 2026</Eyebrow>
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 42, letterSpacing: '.02em', color: 'var(--on-light-1)', margin: 0 }}>Event ticket tiers</h2>
-          <p style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--on-light-2)', margin: '16px auto 0', maxWidth: 560 }}>Redefining the Norm Deansgate Hotel, Manchester 22 August 2026
+          <p style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--on-light-2)', margin: '16px auto 0', maxWidth: 560 }}>Redefining the Norm · Deansgate Hotel, Manchester · 22 August 2026
 
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20, alignItems: 'stretch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, alignItems: 'stretch', maxWidth: 1000, margin: '0 auto 36px' }}>
           {TIERS.map((t) =>
           <div key={t.name} style={{
             background: t.dark ? 'var(--ink-800)' : '#fff', borderRadius: 8, padding: '32px 26px',
@@ -47,6 +59,7 @@ function Booking({ onBook }) {
             </div>
           )}
         </div>
+        <EarlyBirdNote light />
       </div>
     </section>);
 
@@ -54,14 +67,14 @@ function Booking({ onBook }) {
 
 // ---- Mock Eventbrite embedded checkout (charcoal) ----
 function Eventbrite() {
-  const [qty, setQty] = useState({ 0: 0, 1: 1, 2: 0, 3: 0 });
-  const prices = [95, 165, 75, 245];
+  const [qty, setQty] = useState({ 0: 0, 1: 1, 2: 0 });
+  const prices = [224, 300, 146];
   const total = Object.entries(qty).reduce((s, [i, q]) => s + prices[i] * q, 0);
   const fees = total ? Math.round(total * 0.035 * 100) / 100 : 0;
   const step = (i, d) => setQty((p) => ({ ...p, [i]: Math.max(0, Math.min(10, p[i] + d)) }));
 
   return (
-    <section style={{ background: 'var(--ink-900)', padding: '96px 40px', borderTop: '1px solid var(--line-dark)' }}>
+    <section style={{ background: 'var(--ink-800)', padding: '96px 40px', borderTop: '1px solid var(--line-dark)', backgroundColor: "rgb(32, 33, 35)" }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <Eyebrow style={{ marginBottom: 16 }}>Secure Checkout</Eyebrow>
@@ -97,7 +110,7 @@ function Eventbrite() {
             </div>
 
             {/* right: order summary */}
-            <div style={{ background: 'var(--ink-800)', padding: '36px 34px', borderLeft: '1px solid var(--line-dark)', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ background: 'var(--ink-800)', padding: '36px 34px', borderLeft: '1px solid var(--line-dark)', display: 'flex', flexDirection: 'column', backgroundColor: "rgb(32, 33, 35)" }}>
               <div style={{ fontSize: 11, letterSpacing: '.24em', textTransform: 'uppercase', color: 'var(--gold-400)', fontWeight: 600, marginBottom: 20 }}>Order Summary</div>
               <Row label="Subtotal" value={`£${total.toFixed(2)}`} />
               <Row label="Booking fee" value={`£${fees.toFixed(2)}`} muted />
@@ -108,8 +121,11 @@ function Eventbrite() {
               <Btn size="lg" style={{ width: '100%', marginTop: 'auto' }} onClick={() => window.open('https://www.eventbrite.co.uk', '_blank')}>
                 <Icon name="lock" size={15} /> Checkout
               </Btn>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, marginTop: 16, fontSize: 11, color: 'var(--on-dark-3)', letterSpacing: '.06em' }}>
-                Powered by <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, color: 'var(--on-dark-2)', letterSpacing: '.01em' }}>eventbrite</span>
+              <p style={{ margin: '14px 0 0', fontSize: 10.5, lineHeight: 1.55, color: 'var(--on-dark-3)' }}>
+                <strong style={{ color: 'var(--gold-400)', fontWeight: 700 }}>Early Bird</strong> pricing (25% off) ends 30 June 2026. Prices rise 25% from 1 July 2026.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, marginTop: 14, fontSize: 11, color: 'var(--on-dark-3)', letterSpacing: '.06em' }}>
+                 <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 700, color: 'var(--on-dark-2)', letterSpacing: '.01em' }}></span>
               </div>
             </div>
           </div>

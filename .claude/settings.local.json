@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(xxd design_index.json)"
+      "Bash(xxd design_index.json)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mv design_raw.html design_raw.gz)",
+      "Bash(gunzip -c design_raw.gz)",
+      "Bash(mkdir -p design_bundle)",
+      "Bash(tar -xf design_decompressed -C design_bundle)",
+      "Bash(rm -f design_raw.gz design_decompressed)",
+      "Bash(mkdir -p assets css js)",
+      "Bash(cp __TRACKED_VAR__/nwcex-wordmark.png __TRACKED_VAR__/nwcex-logo-charcoal.png __TRACKED_VAR__/hero-conference.jpg __TRACKED_VAR__/fig-card-bg.png assets/)",
+      "Bash(cp __TRACKED_VAR__/sp-__TRACKED_VAR__.png assets/)",
+      "Bash(rm -rf src vite.config.js dist)",
+      "Bash(node --check js/app.js)"
     ]
   }
 }

@@ -616,3 +616,369 @@ _[tool: present_fs_item_for_download]_
 
 It's already a complete standalone file. Presenting it for download.**NWCEX Landing Page — Offline.html** is ready above — it's already fully self-contained (all images, fonts and styles inlined) and works completely offline.
 
+## User
+
+Make the following adjustments for me
+
+## Assistant
+
+_[tool: update_todos]_
+
+This is a substantial update. Let me set up a task list, re-read the current files (you may have edited some), and explore the new Figma file for the approved speaker images.
+
+_[tool: update_todos]_
+
+_[tool: read_file]_
+
+_[tool: read_file]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_read]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_grep]_
+
+Let me explore the Figma file for the approved speaker images.
+
+_[tool: fig_read]_
+
+_[tool: fig_grep]_
+
+_[tool: fig_grep]_
+
+There are individual approved poster frames per speaker. "Christy" is likely **Chris Dzikiti**. Let me read the speaker grid data for bios/roles and find each frame's portrait asset.
+
+_[tool: fig_read]_
+
+_[tool: fig_ls]_
+
+Each poster frame has the portrait. Let me read the SALOME frame structure and list the assets to identify the approved portrait.
+
+_[tool: fig_grep]_
+
+The cutout portrait is the large "no background" PNG (`43add...png`). Let me find each speaker's cutout asset across all frames.
+
+_[tool: fig_ls]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_ls]_
+
+_[tool: fig_ls]_
+
+Let me list the remaining frames' assets to grab each cutout PNG.
+
+_[tool: fig_copy_files]_
+
+_[tool: fig_read]_
+
+I have every speaker's approved cutout PNG. Let me copy all nine into the project.
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+Chris Dzikiti = "Interim Chief Inspector of Mental Health, CQC". Now let me view the new portraits to set framing correctly.
+
+_[tool: image_metadata]_
+
+_[tool: image_metadata]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+_[tool: view_image]_
+
+These are full white-background (or transparent) cutouts — cleaner and more uniform than before. Let me confirm transparency and check the remaining three, plus note Bonita sits small in her frame (matching the user's "increase image size" note).
+
+_[tool: str_replace_edit]_
+
+All nine are clean transparent cutouts — uniform studio portraits, much better than before. Bonita sits small/low in her frame (I'll scale her up per the note), Andrew is landscape (I'll frame to head-and-shoulders). Now let me apply everything. Starting with the speakers.
+
+_[tool: str_replace_edit]_
+
+Now the booking tiers, pricing, and early-bird note.Now the Eventbrite widget — update to 3 tiers, new prices, and add the early-bird note.
+
+_[tool: str_replace_edit]_
+
+_[tool: read_file]_
+
+Now the Exchange/NetworkBand stats in Event.jsx.
+
+_[tool: read_file]_
+
+_[tool: str_replace_edit]_
+
+_[tool: grep]_
+
+Now contact details + footer address. Let me read Contact.jsx.
+
+_[tool: str_replace_edit]_
+
+Now the ticket modal — 3 tiers, new prices, early-bird note.
+
+_[tool: read_file]_
+
+_[tool: str_replace_edit]_
+
+_[tool: update_todos]_
+
+_[tool: show_html]_
+
+_[tool: get_webview_logs]_
+
+All edits applied. Let me check it renders cleanly.
+
+_[tool: show_html]_
+
+_[tool: multi_screenshot]_
+
+The screenshot reloads to the top. Let me hand off to the user and have the verifier check the speaker cards (especially Bonita's scaling and the long credential lines) plus pricing.
+
+_[tool: done]_
+
+_[tool: fork_verifier_agent]_
+
+The design-system nudges are about loading the newly-bound `_ds/` bundle — but this site was built directly on the design system's own source tokens (`colors_and_type.css` with `var(--gold-500)` etc.), so it already adheres to the brand visually. Re-platforming the whole site onto the bundle would be a large, unrequested change. The content amendments are what matter here. Let me verify them.All amendments are in. Here's what changed:
+
+**Pricing** (now 3 tiers, early-bird): Conference Only **£224**, Conference + Gala Dinner **£300** (kept as the highlighted black "Most popular" option), Gala Dinner Only **£146**. The 25% early-bird note (until 30 June 2026, +25% from 1 July) now appears on the tickets section, the Eventbrite widget, and the booking modal. The Eventbrite checkout totals reflect the new prices.
+
+**The Exchange band**: removed "320+ Care Leaders"; "UK-Wide" now carries "Providers | Commissioners | Sector Leaders"; "4 → 2 Flagship Events Per Year"; "1 National Exchange" unchanged.
+
+**Contact**: email → **info@northwestcareexchange.co.uk**; correspondence address → **Suite 21, 6th Floor, St James House, Pendleton Way, Salford, M6 5FW** (in both the contact section and footer).
+
+**Speakers** — pulled the approved cutout portraits from your new Figma file and rebuilt the line-up as nine:
+- **Salome Rumbi Chamboko** — renamed, new photo, full credentials (FCCA · Tax Specialist · Tax Coach · Financial Wellbeing Advocate · Speaker · Author)
+- **Nyasha, Andrew, Tapiwa** (purple-hue-free version), **Muzzie Nduna** (no-mic, slight-smile version) — all updated to the approved images
+- **Bonita Santos** — new photo, scaled up to match the others
+- **Effie Smillie** — unchanged
+- **Chris Dzikiti** and **Christine Fraser-Thomson** — added with photos and credentials
+
+A verifier is confirming the speaker grid, pricing and contact details now. Once you're happy, I'll rebuild the offline/standalone file with the new images.
+
+## User
+
+Verifier agent check completed
+
+## Assistant
+
+_[tool: copy_files]_
+
+Verifier passed. Let me rebuild the offline/standalone file with the new speaker images so it's up to date.
+
+_[tool: str_replace_edit]_
+
+_[tool: super_inline_html]_
+
+_[tool: show_html]_
+
+_[tool: get_webview_logs]_
+
+Clean (just the expected Babel notice). Let me present the updated offline file.
+
+_[tool: update_todos]_
+
+_[tool: present_fs_item_for_download]_
+
+All amendments are verified and live, and the refreshed **NWCEX Landing Page — Offline.html** (with the nine approved speaker portraits and all the pricing/content updates baked in) is ready to download above.
+
+## User
+
+change the logo to the attached one and add the image on the right side of the banner section
+
+## Assistant
+
+_[tool: view_image]_
+
+_[tool: image_metadata]_
+
+_[tool: image_metadata]_
+
+_[tool: read_file]_
+
+_[tool: copy_files]_
+
+_[tool: run_script]_
+
+Both assets received. The logo has a charcoal background — I'll key it out to transparent (and auto-crop to the wordmark) so it sits cleanly on any dark surface, and bring the hero photo in. Let me process the logo and copy the hero.Let me verify the keyed logo looks clean on a dark background.
+
+_[tool: view_image]_
+
+_[tool: image_metadata]_
+
+_[tool: str_replace_edit]_
+
+The keyed wordmark is crisp on transparent. Now I'll swap the CSS logo for this image and rebuild the hero as two columns with the conference photo on the right.
+
+_[tool: str_replace_edit]_
+
+Now the two-column hero with the conference photo on the right.
+
+_[tool: str_replace_edit]_
+
+Let me slightly reduce the header logo size since the image includes the subline, then check it renders.
+
+_[tool: show_html]_
+
+_[tool: save_screenshot]_
+
+_[tool: show_html]_
+
+_[tool: save_screenshot]_
+
+The preview pane needs a moment. Let me retry the screenshot.
+
+_[tool: sleep]_
+
+_[tool: save_screenshot]_
+
+Let me get the logs and try the user-view screenshot instead.
+
+_[tool: get_webview_logs]_
+
+The page loads cleanly (only the expected Babel notice). The screenshot tool's preview pane is just being flaky. Let me hand off to the user and let the verifier confirm the new logo and hero image.
+
+_[tool: done]_
+
+The page loads with no console errors (the design-system token nudges are the same pre-existing ones — the site uses the brand's own source tokens). Let me have the verifier confirm the new logo and hero image render correctly.
+
+_[tool: fork_verifier_agent]_
+
+Done. Two changes:
+
+- **Logo** — swapped the CSS wordmark for your official NWCEX artwork. I keyed out the charcoal background to transparent and auto-cropped it, so it sits cleanly on any dark surface (header and footer) with no dark box.
+- **Hero banner** — restored a two-column layout: the "Redefining the Norm" headline, intro and CTAs on the left, and your conference networking photo on the right inside the signature thin gold frame.
+
+A verifier is confirming both render correctly. Once you're happy, I'll rebuild the offline/standalone file with the new logo and hero image.
+
+## User
+
+Can we also lighten the backdrop of redefining the norm, it’s a bit dark
+
+## Assistant
+
+
+
+## User
+
+Can we also lighten the backdrop of redefining the norm, it’s a bit dark.
+Please delete the gold accents from the speaker profile pictures
+
+## Assistant
+
+I'll re-read the user-edited Booking.jsx, then make both changes: lighten the hero backdrop and remove the gold accents (hairline frame + light-leak + gold banner text) from the speaker cards.
+
+_[tool: read_file]_
+
+_[tool: str_replace_edit]_
+
+_[tool: str_replace_edit]_
+
+Both clear. Let me lighten the hero backdrop and remove the gold hairline frame from the speaker cards.
+
+_[tool: show_html]_
+
+_[tool: save_screenshot]_
+
+The screenshot pane is being flaky again. Let me retry after a brief wait.
+
+_[tool: sleep]_
+
+_[tool: save_screenshot]_
+
+The screenshot pane isn't cooperating, but the edits are straightforward and the page loaded without errors. Let me hand off and let the verifier confirm visually.
+
+_[tool: done]_
+
+Page loads cleanly. Let me have the verifier confirm both changes visually.
+
+_[tool: fork_verifier_agent]_
+
+Both changes are done:
+
+- **Hero backdrop** lightened from near-black to a warmer mid-charcoal — the "Redefining the Norm" section now feels less heavy while keeping the text crisp.
+- **Speaker cards** — removed the thin gold hairline frame around each portrait. The photo, charcoal name banner and credentials remain.
+
+A verifier is confirming both in the background. Once you're happy, I'll rebuild the offline/standalone file with the new logo, hero photo, and these tweaks.
+
+## User
+
+Verifier agent check completed
+
+## Assistant
+
+_[tool: copy_files]_
+
+Verifier passed. Let me rebuild the offline/standalone file with the new logo and hero photo.
+
+_[tool: str_replace_edit]_
+
+_[tool: read_file]_
+
+The copy replaced the standalone with the main file (no meta tags). Let me re-add all the meta tags after the title.
+
+_[tool: str_replace_edit]_
+
+_[tool: super_inline_html]_
+
+_[tool: show_html]_
+
+_[tool: get_webview_logs]_
+
+Clean. The refreshed offline file is ready.
+
+_[tool: present_fs_item_for_download]_
+
+Both tweaks are verified and the refreshed **NWCEX Landing Page — Offline.html** — with the new logo, hero photo, lighter banner backdrop, and frameless speaker cards all baked in — is ready to download above.
+
+## User
+
+can you change the black background to charcoal
+
+## Assistant
+
+_[tool: grep]_
+
+_[tool: grep]_
+
+`--ink-900` (#111214) is the near-black used as the deep background; the brand's actual "primary charcoal surface" is `--ink-800` (#16171A). I'll switch the black section backgrounds to charcoal. Let me find them all.
+
+_[tool: str_replace_edit]_
+
+_[tool: str_replace_edit]_
+
+_[tool: str_replace_edit]_
+
+_[tool: str_replace_edit]_
+
+I'll switch the pure-black section backgrounds (programme, Eventbrite, footer) and the body to the brand's charcoal surface (`--ink-800`). I'll leave `--ink-900` where it's used as text-on-gold or under the speaker texture.
+
+_[tool: show_html]_
+
+_[tool: get_webview_logs]_
+
+Clean. Let me hand off and verify the charcoal change.
+
+_[tool: done]_
+
+Page loads cleanly. Let me verify the charcoal change visually.
+
+_[tool: fork_verifier_agent]_
+
+Done — switched the near-black section backgrounds (Programme, Eventbrite, footer, and the page body) from `#111214` to the brand's charcoal surface `#16171A`. A verifier is confirming the contrast and look in the background. Once you're happy I'll rebuild the offline file.
+

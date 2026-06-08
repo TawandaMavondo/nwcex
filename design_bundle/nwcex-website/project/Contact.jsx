@@ -30,9 +30,9 @@ function Contact() {
 
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <ContactRow icon="mail" label="Email" value="hello@northwestcareexchange.org" />
+            <ContactRow icon="mail" label="Email" value="info@northwestcareexchange.co.uk" />
             <ContactRow icon="phone" label="Phone" value="+44 (0)161 000 0000" />
-            <ContactRow icon="map-pin" label="Address" value="Deansgate Hotel, Deansgate, Manchester, M3 4LQ" />
+            <ContactRow icon="map-pin" label="Address" value="Suite 21, 6th Floor, St James House, Pendleton Way, Salford, England, M6 5FW" />
           </div>
         </div>
 
@@ -87,7 +87,7 @@ function Footer() {
   ['Sectors', [['Children\u2019s Care', 'about'], ['Adult Care', 'about'], ['Commissioners', 'about'], ['Sector Leaders', 'about']]]];
 
   return (
-    <footer style={{ background: 'var(--ink-900)', padding: '76px 40px 36px', borderTop: '1px solid var(--line-dark)' }}>
+    <footer style={{ background: 'var(--ink-800)', padding: '76px 40px 36px', borderTop: '1px solid var(--line-dark)', backgroundColor: "rgb(32, 33, 35)" }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.5fr .8fr .8fr 1.3fr', gap: 44 }}>
         <div>
           <Logo size={24} />
@@ -95,9 +95,9 @@ function Footer() {
             A national exchange for the UK social care sector. Sharing best practice, building the network, improving outcomes.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 20 }}>
-            <FootLine icon="map-pin" text="Deansgate Hotel, Deansgate, Manchester, M3 4LQ" />
-            <FootLine icon="mail" text="hello@northwestcareexchange.org" />
-            <FootLine icon="globe" text="northwestcareexchange.org" />
+            <FootLine icon="map-pin" text="Suite 21, 6th Floor, St James House, Pendleton Way, Salford, England, M6 5FW" />
+            <FootLine icon="mail" text="info@northwestcareexchange.co.uk" />
+            <FootLine icon="globe" text="northwestcareexchange.co.uk" />
           </div>
         </div>
         {cols.map(([h, items]) =>
@@ -118,7 +118,7 @@ function Footer() {
       </div>
       <div style={{ maxWidth: 1200, margin: '48px auto 0', paddingTop: 24, borderTop: '1px solid var(--line-dark)', display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--on-dark-3)', letterSpacing: '.04em', flexWrap: 'wrap', gap: 12 }}>
         <span>© 2026 The North-West Care Exchange Limited</span>
-        <span>Privacy · Terms · northwestcareexchange.org</span>
+        <span>Privacy · Terms · northwestcareexchange.co.uk</span>
       </div>
     </footer>);
 

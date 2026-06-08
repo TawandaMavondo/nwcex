@@ -12,7 +12,7 @@ function FeaturedEvent({ onBook }) {
   ['19:00', 'Evening gala & dinner \u2014 until late']];
 
   return (
-    <section id="programme" style={{ background: 'var(--ink-900)', padding: '96px 40px' }}>
+    <section id="programme" style={{ background: 'var(--ink-800)', padding: '96px 40px', backgroundColor: "rgb(32, 33, 35)" }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
         <div>
           <Eyebrow style={{ marginBottom: 18 }}>Flagship Conference · 2026</Eyebrow>
@@ -43,7 +43,7 @@ function FeaturedEvent({ onBook }) {
 
 // ---- Network stats band (charcoal, quote + stats) ----
 function NetworkBand() {
-  const stats = [['320+', 'Care leaders in the network'], ['UK-wide', 'Providers & commissioners'], ['4', 'Flagship events a year'], ['1', 'National exchange']];
+  const stats = [['UK-Wide', 'Providers | Commissioners | Sector Leaders'], ['2', 'Flagship events a year'], ['1', 'National exchange']];
   return (
     <section style={{ background: 'var(--ink-800)', padding: '84px 40px', position: 'relative', borderTop: '1px solid var(--line-dark)' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
@@ -51,7 +51,7 @@ function NetworkBand() {
         <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 500, fontSize: 31, lineHeight: 1.4, color: '#fff', margin: '0 auto', maxWidth: 780 }}>More than an event a growing national community of executives committed to improving outcomes for service users.
 
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, marginTop: 56 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24, marginTop: 56, maxWidth: 820, marginLeft: 'auto', marginRight: 'auto' }}>
           {stats.map(([n, l]) =>
           <div key={l} style={{ borderLeft: '1px solid var(--line-gold)', paddingLeft: 22, textAlign: 'left' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 36, color: 'var(--gold-500)', letterSpacing: '.02em' }}>{n}</div>

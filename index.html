@@ -1,16 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NWCEX — North-West Care Exchange</title>
-    <meta
-      name="description"
-      content="The North-West Care Exchange — a national forum where social care providers, commissioners and sector leaders convene to share best practice and shape the future of social care."
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NWCEX — North-West Care Exchange</title>
+  <meta name="description" content="The North-West Care Exchange — a national forum where social care providers, commissioners and sector leaders convene to share best practice and shape the future of social care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" data-scroll="top" aria-label="NWCEX home">
+        <img class="logo logo-header" src="assets/nwcex-wordmark.png" alt="NWCEX — North-West Care Exchange">
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#about" data-scroll="about" data-nav="about">About</a>
+        <a href="#programme" data-scroll="programme" data-nav="programme">Event</a>
+        <a href="#speakers" data-scroll="speakers" data-nav="speakers">Speakers</a>
+        <a href="#tickets" data-scroll="tickets" data-nav="tickets">Tickets</a>
+        <a href="#contact" data-scroll="contact" data-nav="contact">Contact</a>
+      </nav>
+      <button class="btn btn-primary btn-sm" data-book>Book Your Ticket</button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="leak-a"></span>
+    <span class="leak-b"></span>
+    <div class="hero-inner">
+      <div class="rise-1">
+        <div class="eyebrow" style="margin-bottom:24px">A National Forum for Social Care Leaders</div>
+        <h1>RE<span class="gold">DEFINING</span><br>THE NORM</h1>
+        <p class="hero-lede">The national exchange where providers, commissioners and sector leaders convene to share best practice and shape the future of social care.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" data-book>Book Your Ticket</button>
+          <button class="btn btn-ghost-dark btn-lg" data-scroll="programme">View Programme</button>
+        </div>
+        <div class="hero-meta">
+          <div class="icon-chip light"><span class="chip"><i data-lucide="map-pin"></i></span><span class="chip-label">Deansgate Hotel, Manchester</span></div>
+          <div class="icon-chip light"><span class="chip"><i data-lucide="calendar"></i></span><span class="chip-label">22 August 2026</span></div>
+        </div>
+      </div>
+      <div class="gold-frame hero-figure rise-2">
+        <span class="frame-line"></span>
+        <div class="photo">
+          <img src="assets/hero-conference.jpg" alt="Delegates networking at The North-West Care Exchange">
+          <div class="scrim"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow on-light">About the Exchange</div>
+        <h2>A national platform for the people who shape social care</h2>
+        <p class="descriptor">A national exchange for providers, commissioners and sector leaders.</p>
+        <p class="body">Though North-West rooted, NWCEX convenes leaders from across the UK to share best practice, confront the sector's hardest challenges, and build the relationships that improve outcomes for service users. We are a premium forum, a growing executive network, and the place where the future of care is discussed candidly.</p>
+        <div class="points">
+          <div class="point"><span class="tick"><i data-lucide="check"></i></span><span class="label">Children’s &amp; adult social care providers</span></div>
+          <div class="point"><span class="tick"><i data-lucide="check"></i></span><span class="label">Commissioners &amp; local-authority partners</span></div>
+          <div class="point"><span class="tick"><i data-lucide="check"></i></span><span class="label">Industry experts &amp; sector entrepreneurs</span></div>
+        </div>
+        <button class="btn btn-ghost-light" data-scroll="tickets">Join the Network</button>
+      </div>
+      <div class="collage">
+        <div class="ph ratio-34 ph-tall">
+          <span class="leak"></span><span class="ph-border"></span>
+          <i data-lucide="presentation"></i><span class="ph-label">Executive conference</span>
+        </div>
+        <div class="ph ratio-43">
+          <span class="leak"></span><span class="ph-border"></span>
+          <i data-lucide="users"></i><span class="ph-label">Networking</span>
+        </div>
+        <div class="ph ratio-43">
+          <span class="leak"></span><span class="ph-border"></span>
+          <i data-lucide="mic"></i><span class="ph-label">Panel discussion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PILLARS / TOPICS ============ -->
+  <section class="pillars">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow" style="margin-bottom:16px">Why It Matters</div>
+        <h2>The conversations that move the sector forward</h2>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar"><i data-lucide="shield-check"></i><h3>Regulatory Insight</h3><p>Stay ahead of compliance, inspection and policy change across adult and children’s care.</p></div>
+        <div class="pillar"><i data-lucide="trending-up"></i><h3>Financial Sustainability</h3><p>Practical strategy for funding, margins and long-term operational resilience.</p></div>
+        <div class="pillar"><i data-lucide="users"></i><h3>Workforce &amp; Leadership</h3><p>Develop leaders and tackle workforce pressures with peers who understand them.</p></div>
+        <div class="pillar"><i data-lucide="handshake"></i><h3>Working with Commissioners</h3><p>Build effective, transparent relationships that improve outcomes for service users.</p></div>
+        <div class="pillar"><i data-lucide="scale"></i><h3>Leadership &amp; Governance</h3><p>Strengthen boards, governance and decision-making at the top of care organisations.</p></div>
+        <div class="pillar"><i data-lucide="rocket"></i><h3>Innovation &amp; Scaling</h3><p>Grow and modernise care services without losing sight of quality and people.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPEAKERS ============ -->
+  <section class="speakers" id="speakers">
+    <div class="wrap">
+      <div class="speakers-head">
+        <div>
+          <div class="eyebrow on-light" style="margin-bottom:14px">The Voices</div>
+          <h2>Meet the Speakers</h2>
+        </div>
+        <div class="car-nav" data-car-nav>
+          <button class="car-btn" data-car-prev aria-label="Previous speakers"><i data-lucide="arrow-left"></i></button>
+          <button class="car-btn" data-car-next aria-label="Next speakers"><i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="car-viewport">
+        <div class="car-track" data-car-track></div>
+      </div>
+      <div class="car-dots" data-car-dots></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED EVENT + PROGRAMME ============ -->
+  <section class="event" id="programme">
+    <div class="event-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom:18px">Flagship Conference · 2026</div>
+        <h2>Redefining the Norm</h2>
+        <p class="lede">A full day of keynotes, panels and workshops with the leaders redefining social care, followed by an evening gala dinner.</p>
+        <div class="chips">
+          <div class="icon-chip light"><span class="chip"><i data-lucide="map-pin"></i></span><span class="chip-label">Deansgate Hotel, Manchester</span></div>
+          <div class="icon-chip light"><span class="chip"><i data-lucide="calendar"></i></span><span class="chip-label">22 August 2026 · 09:00 – 17:30</span></div>
+          <div class="icon-chip light"><span class="chip"><i data-lucide="wine"></i></span><span class="chip-label">Evening gala &amp; dinner from 19:00</span></div>
+        </div>
+        <button class="btn btn-primary btn-lg" data-book>Book Your Ticket</button>
+      </div>
+      <div class="gold-frame programme-card">
+        <span class="frame-line"></span>
+        <div class="pgm-label">Programme · 22 Aug</div>
+        <div class="pgm-row"><span class="time">09:00</span><span class="what">Registration &amp; networking breakfast</span></div>
+        <div class="pgm-row"><span class="time">10:00</span><span class="what">Keynote — Redefining the Norm</span></div>
+        <div class="pgm-row"><span class="time">11:30</span><span class="what">Panel — Financial sustainability in care</span></div>
+        <div class="pgm-row"><span class="time">13:00</span><span class="what">Networking lunch</span></div>
+        <div class="pgm-row"><span class="time">14:00</span><span class="what">Workshops — leadership &amp; governance</span></div>
+        <div class="pgm-row"><span class="time">17:30</span><span class="what">Conference close</span></div>
+        <div class="pgm-row"><span class="time">19:00</span><span class="what">Evening gala &amp; dinner — until late</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NETWORK STATS BAND ============ -->
+  <section class="network">
+    <div class="network-inner">
+      <div class="eyebrow" style="margin-bottom:0">The Exchange</div>
+      <p class="quote">More than an event — a growing national community of executives committed to improving outcomes for service users.</p>
+      <div class="stats">
+        <div class="stat"><div class="num">UK-Wide</div><div class="lbl">Providers | Commissioners | Sector Leaders</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Flagship events a year</div></div>
+        <div class="stat"><div class="num">1</div><div class="lbl">National exchange</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING TIERS ============ -->
+  <section class="booking" id="tickets">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow on-light" style="margin-bottom:16px">Book Your Ticket · Early Bird until 30 June 2026</div>
+        <h2>Event ticket tiers</h2>
+        <p class="sub">Redefining the Norm · Deansgate Hotel, Manchester · 22 August 2026</p>
+      </div>
+      <div class="tier-grid">
+        <div class="tier">
+          <span class="tag-spacer"></span>
+          <div class="tier-name">Conference Only</div>
+          <div class="price-row"><span class="price">£224</span><span class="per">per person</span></div>
+          <div class="feats">
+            <div class="feat"><i data-lucide="check"></i><span>Full-day conference access</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Keynotes, panels &amp; workshops</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Networking breakfast &amp; lunch</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Programme &amp; resources</span></div>
+          </div>
+          <button class="btn btn-ghost-light btn-full" data-book>Select</button>
+        </div>
+        <div class="tier dark">
+          <span class="tag">Most popular</span>
+          <div class="tier-name">Conference + Gala Dinner</div>
+          <div class="price-row"><span class="price">£300</span><span class="per">per person</span></div>
+          <div class="feats">
+            <div class="feat"><i data-lucide="check"></i><span>Everything in Conference</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Evening gala &amp; dinner</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Reserved networking table</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Drinks reception</span></div>
+          </div>
+          <button class="btn btn-primary btn-full" data-book>Select</button>
+        </div>
+        <div class="tier">
+          <span class="tag-spacer"></span>
+          <div class="tier-name">Gala Dinner Only</div>
+          <div class="price-row"><span class="price">£146</span><span class="per">per person</span></div>
+          <div class="feats">
+            <div class="feat"><i data-lucide="check"></i><span>Evening gala &amp; dinner</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Drinks reception</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>Evening networking</span></div>
+            <div class="feat"><i data-lucide="check"></i><span>After-dinner address</span></div>
+          </div>
+          <button class="btn btn-ghost-light btn-full" data-book>Select</button>
+        </div>
+      </div>
+      <div class="early-bird">
+        <i data-lucide="info"></i>
+        <p><strong>Early Bird Offer:</strong> Prices shown include a 25% Early Bird Discount for bookings made on or before 30 June 2026. Ticket prices will increase by 25% for bookings made from 1 July 2026 onwards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTBRITE MOCK CHECKOUT ============ -->
+  <section class="eventbrite">
+    <div class="wrap-narrow">
+      <div class="head">
+        <div class="eyebrow" style="margin-bottom:16px">Secure Checkout</div>
+        <h2>Reserve tickets via Eventbrite</h2>
+      </div>
+      <div class="gold-frame eb-card">
+        <span class="frame-line"></span>
+        <div class="eb-grid">
+          <div class="eb-left">
+            <div class="eb-event">
+              <span class="chip"><i data-lucide="ticket"></i></span>
+              <div>
+                <div class="title">Redefining the Norm 2026</div>
+                <div class="meta">Sat 22 Aug 2026 · Manchester</div>
+              </div>
+            </div>
+            <div class="eb-rows" data-eb-rows>
+              <!-- rows injected by JS -->
+            </div>
+          </div>
+          <div class="eb-right">
+            <div class="eb-summary-label">Order Summary</div>
+            <div class="sum-row"><span>Subtotal</span><span data-eb-subtotal>£0.00</span></div>
+            <div class="sum-row muted"><span>Booking fee</span><span data-eb-fee>£0.00</span></div>
+            <div class="eb-total"><span class="t-label">Total</span><span class="t-value" data-eb-total>£0.00</span></div>
+            <a class="btn btn-primary btn-lg btn-full eb-checkout" href="https://www.eventbrite.co.uk" target="_blank" rel="noopener"><i data-lucide="lock"></i> Checkout</a>
+            <p class="eb-fineprint"><strong>Early Bird</strong> pricing (25% off) ends 30 June 2026. Prices rise 25% from 1 July 2026.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow on-light" style="margin-bottom:18px">Get in Touch</div>
+        <h2>Speak with the team</h2>
+        <p class="intro">Whether you’re attending, speaking, partnering or joining the network, we’d be glad to hear from you.</p>
+        <div class="contact-rows">
+          <div class="contact-row"><span class="chip"><i data-lucide="mail"></i></span><div><div class="c-label">Email</div><div class="c-value">info@northwestcareexchange.co.uk</div></div></div>
+          <div class="contact-row"><span class="chip"><i data-lucide="phone"></i></span><div><div class="c-label">Phone</div><div class="c-value">+44 (0)161 000 0000</div></div></div>
+          <div class="contact-row"><span class="chip"><i data-lucide="map-pin"></i></span><div><div class="c-label">Address</div><div class="c-value">Suite 21, 6th Floor, St James House, Pendleton Way, Salford, England, M6 5FW</div></div></div>
+        </div>
+      </div>
+      <div class="gold-frame form-frame">
+        <span class="frame-line"></span>
+        <div class="form-card">
+          <form class="form-fields" data-contact-form novalidate>
+            <div class="two">
+              <label class="field"><span>Full name</span><input class="inp" name="name" placeholder="Jane Smith" required></label>
+              <label class="field"><span>Email</span><input class="inp" name="email" type="email" placeholder="jane@org.uk" required></label>
+            </div>
+            <label class="field"><span>Organisation</span><input class="inp" name="org" placeholder="Your care organisation"></label>
+            <label class="field"><span>Message</span><textarea class="inp" name="message" placeholder="How can we help?" required></textarea></label>
+            <button type="submit" class="btn btn-primary btn-full is-disabled" data-contact-submit disabled>Send Message</button>
+          </form>
+          <div class="form-success" data-contact-success hidden>
+            <span class="seal"><i data-lucide="check"></i></span>
+            <h3>Thank you</h3>
+            <p>Your message has been received. A member of the team will be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#top" data-scroll="top" aria-label="NWCEX home"><img class="logo logo-footer" src="assets/nwcex-wordmark.png" alt="NWCEX — North-West Care Exchange"></a>
+        <p class="blurb">A national exchange for the UK social care sector. Sharing best practice, building the network, improving outcomes.</p>
+        <div class="foot-lines">
+          <div class="foot-line"><i data-lucide="map-pin"></i><span>Suite 21, 6th Floor, St James House, Pendleton Way, Salford, England, M6 5FW</span></div>
+          <div class="foot-line"><i data-lucide="mail"></i><span>info@northwestcareexchange.co.uk</span></div>
+          <div class="foot-line"><i data-lucide="globe"></i><span>northwestcareexchange.co.uk</span></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="col-head">Platform</div>
+        <a data-scroll="about">About</a>
+        <a data-scroll="programme">Programme</a>
+        <a data-scroll="speakers">Speakers</a>
+        <a data-scroll="tickets">Tickets</a>
+      </div>
+      <div class="footer-col">
+        <div class="col-head">Sectors</div>
+        <a data-scroll="about">Children’s Care</a>
+        <a data-scroll="about">Adult Care</a>
+        <a data-scroll="about">Commissioners</a>
+        <a data-scroll="about">Sector Leaders</a>
+      </div>
+      <div class="footer-col">
+        <div class="col-head">Payment Details</div>
+        <div class="bank-box">
+          <div class="bank-row"><div class="b-label">Account holder</div><div class="b-value">The North-West Care Exchange Limited</div></div>
+          <div class="bank-row"><div class="b-label">Account number</div><div class="b-value mono">40040363</div></div>
+          <div class="bank-row last"><div class="b-label">Sort code</div><div class="b-value mono">20-55-41</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The North-West Care Exchange Limited</span>
+      <span>Privacy · Terms · northwestcareexchange.co.uk</span>
+    </div>
+  </footer>
+
+  <!-- ============ TICKET MODAL ============ -->
+  <div class="modal-overlay" data-modal hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Book your ticket">
+      <span class="frame-line"></span>
+      <div class="modal-inner">
+        <div class="modal-head">
+          <div>
+            <div class="eyebrow" style="margin-bottom:12px">Redefining the Norm · 22 Aug 2026</div>
+            <h3 data-modal-title>Book your ticket</h3>
+          </div>
+          <button class="modal-close" data-modal-close aria-label="Close"><i data-lucide="x"></i></button>
+        </div>
+
+        <div data-modal-form>
+          <div class="modal-tiers" data-modal-tiers></div>
+          <input class="modal-inp" placeholder="Full name">
+          <input class="modal-inp" placeholder="Work email">
+          <input class="modal-inp" placeholder="Organisation">
+          <p class="modal-note"><strong>Early Bird Offer:</strong> Prices include a 25% discount for bookings on or before 30 June 2026, rising 25% from 1 July 2026.</p>
+          <button class="btn btn-primary btn-full" style="margin-top:18px" data-modal-confirm>Confirm Booking — £300</button>
+        </div>
+
+        <div class="modal-success" data-modal-success hidden>
+          <span class="seal"><i data-lucide="check"></i></span>
+          <p>Confirmation and joining details for <span class="gold" data-modal-sel-name>Conference + Gala Dinner</span> are on their way to your inbox.</p>
+          <button class="btn btn-ghost-dark" style="margin-top:26px" data-modal-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>

@@ -4,13 +4,15 @@ const R = window.__resources || {};
 const asset = (id, path) => R[id] || path;
 
 const SPEAKERS = [
-{ name: 'Salom Rumbi Chamboko', role: 'ACCA Accountant · Financial Wellbeing Advocate', img: asset('salom', 'assets/fig-salom.png'), pos: 'center top' },
-{ name: 'Effie Smillie', role: 'CEO, Rainbow Medical Services', img: asset('effie', 'assets/fig-effie.png'), pos: 'center top' },
-{ name: 'Nyasha Gwatidzo', role: 'Social Entrepreneur · Award-Winning CEO', img: asset('nyasha', 'assets/fig-nyasha.png'), pos: '46% top' },
-{ name: 'Andrew Nyamayaro', role: 'Director, Tann Law Solicitors', img: asset('andrew', 'assets/fig-andrew.png'), pos: '52% top' },
-{ name: 'Tapiwa Madovi', role: 'Investor, NED & Supported Living Consultant', img: asset('tapiwa', 'assets/fig-tapiwa.png'), pos: 'center top' },
-{ name: 'Muzie Nduna', role: 'Property Entrepreneur · Business Mentor', img: asset('muzie', 'assets/fig-muzie.png'), pos: 'center top' },
-{ name: 'Bonita Santos', role: 'Co-Founder & CEO, NWCEX', img: asset('bonita', 'assets/fig-bonita.png'), pos: 'center top' }];
+{ name: 'Salome Rumbi Chamboko', role: 'Qualified Accountant (FCCA) · Tax Specialist · Tax Coach · Financial Wellbeing Advocate · Speaker · Author', img: asset('salome', 'assets/sp-salome.png'), pos: 'center 4%' },
+{ name: 'Effie Smillie', role: 'CEO, Rainbow Medical Services', img: asset('effie', 'assets/sp-effie.png'), pos: 'center top' },
+{ name: 'Nyasha Gwatidzo', role: 'Social Entrepreneur · Award-Winning CEO · Global Change Maker', img: asset('nyasha', 'assets/sp-nyasha.png'), pos: 'center top' },
+{ name: 'Andrew Nyamayaro', role: 'Director, Tann Law Solicitors', img: asset('andrew', 'assets/sp-andrew.png'), pos: 'center 12%' },
+{ name: 'Tapiwa Madovi', role: 'Investor · NED · Supported Living Consultant', img: asset('tapiwa', 'assets/sp-tapiwa.png'), pos: 'center top' },
+{ name: 'Muzzie Nduna', role: 'Property Entrepreneur · Business Mentor · Public Speaker', img: asset('muzzie', 'assets/sp-muzzie.png'), pos: 'center top' },
+{ name: 'Bonita Santos', role: 'Co-Founder & CEO, NWCEX', img: asset('bonita', 'assets/sp-bonita.png'), pos: 'center top', scale: 1.42, origin: 'center 34%' },
+{ name: 'Chris Dzikiti', role: 'Interim Chief Inspector of Mental Health, CQC', img: asset('chris', 'assets/sp-chris.png'), pos: 'center top' },
+{ name: 'Christine Fraser-Thomson', role: 'RMN · Mental Health Specialist Nurse · ADHD & Autism Clinical Lead', img: asset('christine', 'assets/sp-christine.png'), pos: 'center top' }];
 
 
 function SpeakerCard({ s }) {
@@ -21,10 +23,8 @@ function SpeakerCard({ s }) {
       background: `var(--ink-900) center/cover url(${asset('cardbg', 'assets/fig-card-bg.png')})`,
       boxShadow: hover ? 'var(--shadow-lg)' : 'var(--shadow-md)', transform: hover ? 'translateY(-6px)' : 'none',
       transition: 'all var(--dur) var(--ease)' }}>
-      {/* gold hairline frame motif */}
-      <span style={{ position: 'absolute', inset: 12, border: '1px solid var(--line-gold)', borderRadius: 3, pointerEvents: 'none', zIndex: 3 }}></span>
       {/* cutout portrait */}
-      <img src={s.img} alt={s.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center top', zIndex: 1 }} />
+      <img src={s.img} alt={s.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: s.pos || 'center top', transform: s.scale ? `scale(${s.scale})` : undefined, transformOrigin: s.origin || 'center top', zIndex: 1 }} />
       {/* charcoal protection gradient toward the banner */}
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: '52%', background: 'linear-gradient(to top, var(--ink-900) 18%, rgba(17,18,20,.72) 48%, transparent)', zIndex: 1 }}></div>
       {/* angled charcoal name banner */}
@@ -33,8 +33,8 @@ function SpeakerCard({ s }) {
         background: 'rgba(20,21,23,.92)', clipPath: 'polygon(0 14%, 100% 0, 100% 100%, 0 100%)',
         padding: '34px 24px 22px', textAlign: 'center',
       }}>
-        <h3 style={{ fontFamily: "'Inknut Antiqua', var(--font-display)", fontWeight: 700, fontSize: 20, color: '#fff', margin: 0, letterSpacing: '.03em', textTransform: 'uppercase', lineHeight: 1.2 }}>{s.name}</h3>
-        <p style={{ fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 11, color: 'var(--gold-400)', margin: '9px 0 0', letterSpacing: '.16em', textTransform: 'uppercase', lineHeight: 1.5 }}>{s.role}</p>
+        <h3 style={{ fontFamily: "'Inknut Antiqua', var(--font-display)", fontWeight: 700, fontSize: 19, color: '#fff', margin: 0, letterSpacing: '.03em', textTransform: 'uppercase', lineHeight: 1.2 }}>{s.name}</h3>
+        <p style={{ fontFamily: 'var(--font-sans)', fontWeight: 600, fontSize: 10, color: 'var(--gold-400)', margin: '9px auto 0', letterSpacing: '.12em', textTransform: 'uppercase', lineHeight: 1.55, maxWidth: 250 }}>{s.role}</p>
       </div>
     </div>);
 

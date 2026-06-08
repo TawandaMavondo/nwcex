@@ -56,7 +56,7 @@ function Pillars() {
   ['rocket', 'Innovation & Scaling', 'Grow and modernise care services without losing sight of quality and people.']];
 
   return (
-    <section style={{ background: 'var(--ink-800)', padding: '92px 40px' }}>
+    <section style={{ background: 'var(--ink-800)', padding: '92px 40px', backgroundColor: "rgb(32, 33, 35)" }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ maxWidth: 700 }}>
           <Eyebrow style={{ marginBottom: 16 }}>Why It Matters</Eyebrow>

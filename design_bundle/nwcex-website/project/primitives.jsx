@@ -10,20 +10,12 @@ function Icon({ name, size = 20, color, style }) {
   return <i data-lucide={name} style={{ width: size, height: size, color, ...style }}></i>;
 }
 
-// The NWCEX wordmark — Cinzel caps with gold EX, + tracked subline
-function Logo({ size = 24, subline = true, light = true }) {
-  const fg = light ? '#fff' : 'var(--on-light-1)';
+// The NWCEX wordmark — official logo artwork (transparent PNG)
+const LOGO_SRC = (window.__resources && window.__resources.logo) || 'assets/nwcex-wordmark.png';
+function Logo({ size = 24 }) {
+  // image includes wordmark + rule + subline; height ≈ size * 2
   return (
-    <div style={{ lineHeight: 1 }}>
-      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: size, letterSpacing: '.04em' }}>
-        <span style={{ color: fg }}>NWC</span><span style={{ color: 'var(--gold-500)' }}>EX</span>
-      </div>
-      {subline && (
-        <div style={{ marginTop: size * 0.22, fontSize: Math.max(8, size * 0.33), letterSpacing: '.30em', textTransform: 'uppercase', fontWeight: 500, color: light ? 'var(--on-dark-2)' : 'var(--on-light-2)', fontFamily: 'var(--font-sans)' }}>
-          North-West Care Exchange
-        </div>
-      )}
-    </div>
+    <img src={LOGO_SRC} alt="NWCEX — North-West Care Exchange" style={{ height: size * 1.95, width: 'auto', display: 'block' }} />
   );
 }
 
